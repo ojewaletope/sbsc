@@ -1,0 +1,339 @@
+<div class="dashboard-container">
+  <div class="menu-container">
+    <app-menu></app-menu>
+  </div>
+  <div class="content-wrapper">
+    <app-navbar></app-navbar>
+    <div class="content">
+      <div class="dashboard-header">
+        <p>Dashboard</p>
+        <div>
+          <span
+            ><svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M15.1334 12.6667L9.0667 6.59999C9.6667 5.06665 9.33337 3.26665 8.0667 1.99999C6.73337 0.666654 4.73337 0.399988 3.13337 1.13332L6.00003 3.99999L4.00003 5.99999L1.0667 3.13332C0.266701 4.73332 0.600035 6.73332 1.93337 8.06665C3.20003 9.33332 5.00003 9.66665 6.53337 9.06665L12.6 15.1333C12.8667 15.4 13.2667 15.4 13.5334 15.1333L15.0667 13.6C15.4 13.3333 15.4 12.8667 15.1334 12.6667Z"
+                fill="#1B5BAC"
+              />
+            </svg>
+          </span>
+          <span class="c_dashboard">Customised Dashboard</span>
+          <span
+            ><svg
+              width="1"
+              height="29"
+              viewBox="0 0 1 29"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <line
+                opacity="0.1"
+                x1="0.5"
+                y1="2.18557e-08"
+                x2="0.499999"
+                y2="29"
+                stroke="black"
+              />
+            </svg>
+          </span>
+          <span class="c_date">Mon Jun 22, 2020</span>
+        </div>
+      </div>
+      <section class="upper-card">
+        <div class="card left_card">
+          <span class="cancel-btn">X</span>
+          <div class="text-wrapper">
+            <p class="left_card-heading">Welcome back! chidinma</p>
+            <p class="left_card-text">
+              See overview of analytics and reporting metrics and a lot more
+              interesting stuffs you can do here
+            </p>
+            <button class="left_card-btn">Take a tour</button>
+          </div>
+          <span> </span>
+        </div>
+        <img src="../../../../assets/img/undraw_data_trends_b0wg%201.svg" class="img" alt=""/>
+        <div class="card right_card">
+          <div class="card-wrapper">
+            <p class="right_card-heading">OPTIMIZED APPLICATION PROCESSING</p>
+            <p class="right_card-text">
+              We’ve optimized the system to process your application as fast as
+              possible. Click on the button below to get started.
+            </p>
+            <button class="right_card-btn">new request</button>
+          </div>
+        </div>
+      </section>
+      <section class="lower-card">
+        <app-chart [title]="'CAPEX'" [data]="data" [backgroundColor]="''" [cardTitle]="'Annual Play Budget'">
+          <div class="content-container">
+            <div class="content-1">
+              <span class="total">Total Play(NGN)</span>
+              <span class="amount">{{data?.totalPlayBudget | number: '1.2-2'}}</span>
+            </div>
+            <ul class="content-2">
+              <li class="circle circle-blue">Total Spent</li>
+              <li class="circle circle-grey">Balance</li>
+            </ul>
+          </div>
+          <div class="content-container">
+            <div class="content-1">
+              <span class="total">Total Spent(NGN)</span>
+              <span class="amount">{{data?.totalPlayBudgetSpent | number: '1.2-2'}}</span>
+            </div>
+            <div class="content-2">
+              <span class="total">Balance(NGN)</span>
+              <span class="amount">{{data?.totalPlayBudgetBalance | number: '1.2-2'}}</span>
+            </div>
+          </div>
+        </app-chart>
+        <app-chart [title]="'OPEX'" [data]="data" [backgroundColor]="'red'" [cardTitle]="'Annual Work Budget'">
+          <div class="content-container">
+            <div class="content-1">
+              <span class="total">Total Work(NGN)</span>
+              <span class="amount">{{data?.totalWorkBudget | number: '1.2-2'}}</span>
+            </div>
+            <ul class="content-2">
+              <li class="circle circle-red">Total Spent</li>
+              <li class="circle circle-light-grey">Balance</li>
+            </ul>
+          </div>
+          <div class="content-container">
+            <div class="content-1">
+              <span class="total">Total Spent(NGN)</span>
+              <span class="amount">{{data?.totalWorkBudgetSpent | number: '1.2-2'}}</span>
+            </div>
+            <div class="content-2">
+              <span class="total">Balance(NGN)</span>
+              <span class="amount">{{data?.totalWorkBudgetBalance}}</span>
+            </div>
+          </div>
+        </app-chart>
+        <app-chart [title]="'ASSETS'" [data]="data" [backgroundColor]="'blue'" [cardTitle]="'Card Summary'">
+          <div class="content-container">
+            <div class="content-1">
+              <span class="total">Total Cards</span>
+              <span class="amount">{{data?.totalCardsCount}}</span>
+            </div>
+            <ul class="content-2">
+              <li class="circle circle-yellow">In-Use</li>
+              <li class="circle circle-white">In-active</li>
+            </ul>
+          </div>
+          <div class="content-container">
+            <div class="content-1">
+              <span class="total">Cards-In-Use</span>
+              <span class="amount">{{data?.totalCardsInUse}}</span>
+            </div>
+            <div class="content-2">
+              <span class="total">In-Active</span>
+              <span class="amount">{{data?.totalCardsInActive}}</span>
+            </div>
+          </div>
+        </app-chart>
+<!--        <div class="card-detail one">-->
+<!--          <div class="top-flex">-->
+<!--            <div class="select-div">-->
+<!--              <label for="annual-budget" class="select-label">Annual pay budget</label>-->
+<!--              <select name="" id="annual-budget" class="form-select">-->
+<!--                <option value="" selected>This Year</option>-->
+<!--              </select>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--              <span>Summary</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="chart-container">-->
+<!--            <div class="chart">-->
+<!--              CAPEX-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="card-detail-container">-->
+<!--            <div class="content-container">-->
+<!--              <div class="content-1">-->
+<!--                <span class="total">Total Play(NGN)</span>-->
+<!--                <span class="amount">{{data?.totalPlayBudget | number: '1.2-2'}}</span>-->
+<!--              </div>-->
+<!--              <ul class="content-2">-->
+<!--                <li>-->
+<!--                  <span-->
+<!--                    ><svg-->
+<!--                      width="10"-->
+<!--                      height="10"-->
+<!--                      viewBox="0 0 10 10"-->
+<!--                      fill="none"-->
+<!--                      xmlns="http://www.w3.org/2000/svg"-->
+<!--                    >-->
+<!--                      <circle cx="5" cy="5" r="5" fill="#1B5BAC" />-->
+<!--                    </svg>-->
+<!--                  </span>-->
+<!--                  Total Spent-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                  <span-->
+<!--                    ><svg-->
+<!--                      width="10"-->
+<!--                      height="10"-->
+<!--                      viewBox="0 0 10 10"-->
+<!--                      fill="none"-->
+<!--                      xmlns="http://www.w3.org/2000/svg"-->
+<!--                    >-->
+<!--                      <circle cx="5" cy="5" r="5" fill="#D7E2ED" />-->
+<!--                    </svg>-->
+<!--                  </span>-->
+<!--                  Balance-->
+<!--                </li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--            <div class="content-container">-->
+<!--              <div class="content-1">-->
+<!--                <span class="total">Total Spent(NGN)</span>-->
+<!--                <span class="amount">{{data?.totalPlayBudgetSpent | number: '1.2-2'}}</span>-->
+<!--              </div>-->
+<!--              <div class="content-2">-->
+<!--                <span class="total">Balance(NGN)</span>-->
+<!--                <span class="amount">{{data?.totalPlayBudgetBalance | number: '1.2-2'}}</span>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="card-detail two">-->
+<!--          <div class="top-flex">-->
+<!--            <div class="select-div">-->
+<!--              <label for="annual-budget" class="select-label">Annual Work Budget</label>-->
+<!--              <select name="" id="annual-work" class="form-select">-->
+<!--                <option value="" selected>This Year</option>-->
+<!--              </select>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--              <span>Summary</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="chart-container">-->
+<!--            <div class="chart chart-2">-->
+<!--              OPEX-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="card-detail-container card-2">-->
+<!--            <div class="content-container">-->
+<!--              <div class="content-1">-->
+<!--                <span class="total">Total Work(NGN)</span>-->
+<!--                <span class="amount">{{data?.totalWorkBudget | number: '1.2-2'}}</span>-->
+<!--              </div>-->
+<!--              <ul class="content-2">-->
+<!--                <li>-->
+<!--                  <span-->
+<!--                    ><svg-->
+<!--                      width="10"-->
+<!--                      height="10"-->
+<!--                      viewBox="0 0 10 10"-->
+<!--                      fill="none"-->
+<!--                      xmlns="http://www.w3.org/2000/svg"-->
+<!--                    >-->
+<!--                      <circle cx="5" cy="5" r="5" fill="#FF6542" />-->
+<!--                    </svg>-->
+<!--                  </span>-->
+<!--                  Total Spent-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                  <span-->
+<!--                    ><svg-->
+<!--                      width="10"-->
+<!--                      height="10"-->
+<!--                      viewBox="0 0 10 10"-->
+<!--                      fill="none"-->
+<!--                      xmlns="http://www.w3.org/2000/svg"-->
+<!--                    >-->
+<!--                      <circle cx="5" cy="5" r="5" fill="#EEDFD8" />-->
+<!--                    </svg>-->
+<!--                  </span>-->
+<!--                  Balance-->
+<!--                </li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--            <div class="content-container">-->
+<!--              <div class="content-1">-->
+<!--                <span class="total">Total Spent(NGN)</span>-->
+<!--                <span class="amount">{{data?.totalWorkBudgetSpent | number: '1.2-2'}}</span>-->
+<!--              </div>-->
+<!--              <div class="content-2">-->
+<!--                <span class="total">Balance(NGN)</span>-->
+<!--                <span class="amount">{{data?.totalWorkBudgetBalance}}</span>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="card-detail three">-->
+<!--          <div class="top-flex" style="margin-right: 242px;-->
+<!--    display: flex;-->
+<!--    flex-direction: column;">-->
+<!--            <div class="select-div">-->
+<!--              <span for="annual-budget">Cards Count</span>-->
+<!--            </div>-->
+<!--            <div>-->
+<!--              <span>Summary</span>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="chart-container">-->
+<!--            <div class="chart chart-3">-->
+<!--              Assets-->
+<!--            </div>-->
+<!--          </div>-->
+<!--          <div class="card-detail-container card-3">-->
+<!--            <div class="content-container">-->
+<!--              <div class="content-1">-->
+<!--                <span class="total">Total Cards</span>-->
+<!--                <span class="amount">{{data?.totalCardsCount}}</span>-->
+<!--              </div>-->
+<!--              <ul class="content-2">-->
+<!--                <li>-->
+<!--                  <span-->
+<!--                    ><svg-->
+<!--                      width="8"-->
+<!--                      height="8"-->
+<!--                      viewBox="0 0 8 8"-->
+<!--                      fill="none"-->
+<!--                      xmlns="http://www.w3.org/2000/svg"-->
+<!--                    >-->
+<!--                      <circle cx="4" cy="4" r="4" fill="#F6AE2D" />-->
+<!--                    </svg>-->
+<!--                  </span>-->
+<!--                  In-Use-->
+<!--                </li>-->
+<!--                <li>-->
+<!--                  <span-->
+<!--                    ><svg-->
+<!--                      width="8"-->
+<!--                      height="8"-->
+<!--                      viewBox="0 0 8 8"-->
+<!--                      fill="none"-->
+<!--                      xmlns="http://www.w3.org/2000/svg"-->
+<!--                    >-->
+<!--                      <circle cx="4" cy="4" r="4" fill="#EEEAE4" />-->
+<!--                    </svg>-->
+<!--                  </span>-->
+<!--                  In-active-->
+<!--                </li>-->
+<!--              </ul>-->
+<!--            </div>-->
+<!--            <div class="content-container">-->
+<!--              <div class="content-1">-->
+<!--                <span class="total">Cards-In-Use</span>-->
+<!--                <span class="amount">{{data?.totalCardsInUse}}</span>-->
+<!--              </div>-->
+<!--              <div class="content-2">-->
+<!--                <span class="total">In-Active</span>-->
+<!--                <span class="amount">{{data?.totalCardsInActive}}</span>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+      </section>
+    </div>
+  </div>
+</div>

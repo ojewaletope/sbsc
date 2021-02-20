@@ -1,0 +1,21 @@
+<div class="card-detail" [ngClass]="backgroundColor ? backgroundColor: ''">
+  <div class="top-flex">
+    <div class="select-div">
+      <label for="annual-budget" class="select-label">{{cardTitle}}</label>
+      <select name="" id="annual-budget" class="form-select" *ngIf="cardTitle === 'Annual Work Budget' || cardTitle === 'Annual Play Budget'">
+        <option value="" selected>This Year</option>
+      </select>
+    </div>
+    <div>
+      <span>Summary</span>
+    </div>
+  </div>
+  <div class="chart-container">
+    <div class="chart">
+      {{title}}
+    </div>
+  </div>
+  <div class="card-detail-container">
+    <ng-content></ng-content>
+  </div>
+</div>
