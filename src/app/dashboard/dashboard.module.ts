@@ -3,7 +3,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {DashboardRoutingModule} from './dashboard-routing.module';
 import {SharedModule} from '../shared/shared.module';
-import {DashboardService} from './service/dashboard.service';
+
 
 
 
@@ -14,6 +14,6 @@ import {DashboardService} from './service/dashboard.service';
     DashboardRoutingModule,
     SharedModule
   ],
-  providers: [DashboardService]
+  providers: []
 })
 export class DashboardModule { }

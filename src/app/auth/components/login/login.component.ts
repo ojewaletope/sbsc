@@ -4,6 +4,7 @@ import swal from 'sweetalert2'
 import {UserInterface} from "../../../models/dataModels";
 import {FormBuilder, FormGroup} from "@angular/forms";
 import {init} from "protractor/built/launcher";
+import {AuthService} from "../../services/auth.service";
 
 @Component({
   selector: 'app-login',
@@ -15,7 +16,8 @@ export class LoginComponent implements OnInit {
   userForm: FormGroup;
   constructor(
     private router: Router,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private authService: AuthService
   ) { }
 
   ngOnInit(): void {
@@ -36,6 +38,12 @@ export class LoginComponent implements OnInit {
     if (!payload.password) {
       return swal.fire('Error', 'Password is required', 'error')
     }
-    this.router.navigate(['/home/dashboard']);
+    return this.authService.getData().subscribe(data => {
+      if (data) {
+        this.router.navigateByUrl('/home');
+      }
+    }, err => {
+      console.log(err);
+    })
   }
 }
