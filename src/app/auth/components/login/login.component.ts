@@ -38,10 +38,10 @@ export class LoginComponent implements OnInit {
     if (!payload.password) {
       return swal.fire('Error', 'Password is required', 'error')
     }
-    localStorage.setItem('user', payload);
+    localStorage.setItem('user', JSON.stringify(payload));
     return this.authService.getData().subscribe(data => {
       if (data) {
-        this.router.navigateByUrl('/home');
+        this.router.navigateByUrl('/');
       }
     }, err => {
       console.log(err);
