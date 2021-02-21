@@ -38,6 +38,7 @@ export class LoginComponent implements OnInit {
     if (!payload.password) {
       return swal.fire('Error', 'Password is required', 'error')
     }
+    localStorage.setItem('user', payload);
     return this.authService.getData().subscribe(data => {
       if (data) {
         this.router.navigateByUrl('/home');
