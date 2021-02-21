@@ -1,7 +1,8 @@
 <div class="card-detail" [ngClass]="backgroundColor ? backgroundColor: ''">
   <div class="top-flex">
     <div class="select-div">
-      <label for="annual-budget" class="select-label">{{cardTitle}}</label>
+      <label for="annual-budget" class="select-label" *ngIf="title === 'ASSETS'" style="margin-right: 200px">{{cardTitle}}</label>
+      <label for="annual-budget" class="select-label" *ngIf="title !== 'ASSETS'">{{cardTitle}}</label>
       <select name="" id="annual-budget" class="form-select" *ngIf="cardTitle === 'Annual Work Budget' || cardTitle === 'Annual Play Budget'">
         <option value="" selected>This Year</option>
       </select>
@@ -11,8 +12,15 @@
     </div>
   </div>
   <div class="chart-container">
+<!--    <div class="tooltip">Hover over me-->
+<!--      <span class="tooltiptext">Tooltip text</span>-->
+<!--    </div>-->
     <div class="chart">
-      {{title}}
+      <div class="tooltip">
+        {{title}}
+        <span class="tooltiptext" *ngIf="title === 'OPEX'">{{percentage}}%</span>
+        <span class="tooltiptext" *ngIf="title === 'CAPEX' || title === 'ASSETS'" style="left: 60px; bottom: 70px">{{percentage}}%</span>
+      </div>
     </div>
   </div>
   <div class="card-detail-container">

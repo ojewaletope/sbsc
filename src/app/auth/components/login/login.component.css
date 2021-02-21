@@ -36,7 +36,7 @@
   color: #5A99C4;
 }
 .login_header {
-  width: 186px;
+  width: 205px;
   height: 82px;
   font-style: normal;
   font-weight: bold;
@@ -83,4 +83,5 @@
   outline: none;
   border: none;
   color: #fff;
+  cursor: pointer;
 }

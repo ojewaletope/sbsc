@@ -24,6 +24,7 @@
         </svg>
       </li>
       <li class="nav-item notification">
+        <img src="../../../../assets/img/bell.svg" alt="" style="margin-left: -6px;">
         <div class="notif-content">
           <p class="p_notif">Notifications Centre</p>
           <span class="p_text">You have 2 new notifications</span>
@@ -31,12 +32,15 @@
         <div class="notif_no">2</div>
       </li>
       <li class="nav-item user-container">
-        <div>
+        <img src="../../../../assets/img/user.svg" alt="">
+        <div class="user-details">
           <p class="user-name">Chidinma Nwanya</p>
+          <p class="user-name-details">Vanity by juis</p>
         </div>
-        <div class="log-out-wrapper">
+        <div class="log-out-wrapper" (click)="logout()">
           <span>
             <svg
+              style="width: 15px; height: 15px"
               width="20"
               height="20"
               viewBox="0 0 20 20"

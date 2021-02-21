@@ -6,7 +6,7 @@
     <app-navbar></app-navbar>
     <div class="content">
       <div class="dashboard-header">
-        <p>Dashboard</p>
+        <p class="dashboard-para">Dashboard</p>
         <div>
           <span
             ><svg
@@ -66,15 +66,17 @@
               possible. Click on the button below to get started.
             </p>
             <button class="right_card-btn">new request</button>
+            <img class="right_card-img" src="../../../../assets/img/optimise_image.svg" alt="">
           </div>
         </div>
+
       </section>
       <section class="lower-card">
-        <app-chart [title]="'CAPEX'" [data]="data" [backgroundColor]="''" [cardTitle]="'Annual Play Budget'">
+        <app-chart [title]="'CAPEX'" [data]="data" [backgroundColor]="''" [percentage]="50" [cardTitle]="'Annual Play Budget'">
           <div class="content-container">
             <div class="content-1">
               <span class="total">Total Play(NGN)</span>
-              <span class="amount">{{data?.totalPlayBudget | number: '1.2-2'}}</span>
+              <span class="amount">50,000,000</span>
             </div>
             <ul class="content-2">
               <li class="circle circle-blue">Total Spent</li>
@@ -84,19 +86,19 @@
           <div class="content-container">
             <div class="content-1">
               <span class="total">Total Spent(NGN)</span>
-              <span class="amount">{{data?.totalPlayBudgetSpent | number: '1.2-2'}}</span>
+              <span class="amount">18,000,000</span>
             </div>
             <div class="content-2">
               <span class="total">Balance(NGN)</span>
-              <span class="amount">{{data?.totalPlayBudgetBalance | number: '1.2-2'}}</span>
+              <span class="amount">32,000,000</span>
             </div>
           </div>
         </app-chart>
-        <app-chart [title]="'OPEX'" [data]="data" [backgroundColor]="'red'" [cardTitle]="'Annual Work Budget'">
+        <app-chart [title]="'OPEX'" [data]="data" [backgroundColor]="'red'" [percentage]="64" [cardTitle]="'Annual Work Budget'">
           <div class="content-container">
             <div class="content-1">
               <span class="total">Total Work(NGN)</span>
-              <span class="amount">{{data?.totalWorkBudget | number: '1.2-2'}}</span>
+              <span class="amount">20,000,000</span>
             </div>
             <ul class="content-2">
               <li class="circle circle-red">Total Spent</li>
@@ -106,19 +108,19 @@
           <div class="content-container">
             <div class="content-1">
               <span class="total">Total Spent(NGN)</span>
-              <span class="amount">{{data?.totalWorkBudgetSpent | number: '1.2-2'}}</span>
+              <span class="amount">10,000,000</span>
             </div>
             <div class="content-2">
               <span class="total">Balance(NGN)</span>
-              <span class="amount">{{data?.totalWorkBudgetBalance}}</span>
+              <span class="amount">10,000,000</span>
             </div>
           </div>
         </app-chart>
-        <app-chart [title]="'ASSETS'" [data]="data" [backgroundColor]="'blue'" [cardTitle]="'Card Summary'">
+        <app-chart [title]="'ASSETS'" [data]="data" [backgroundColor]="'blue'" [percentage]="80" [cardTitle]="'Card Summary'">
           <div class="content-container">
             <div class="content-1">
               <span class="total">Total Cards</span>
-              <span class="amount">{{data?.totalCardsCount}}</span>
+              <span class="amount">392,383</span>
             </div>
             <ul class="content-2">
               <li class="circle circle-yellow">In-Use</li>
@@ -128,11 +130,11 @@
           <div class="content-container">
             <div class="content-1">
               <span class="total">Cards-In-Use</span>
-              <span class="amount">{{data?.totalCardsInUse}}</span>
+              <span class="amount">342,383</span>
             </div>
             <div class="content-2">
               <span class="total">In-Active</span>
-              <span class="amount">{{data?.totalCardsInActive}}</span>
+              <span class="amount">50,000</span>
             </div>
           </div>
         </app-chart>

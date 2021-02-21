@@ -1,0 +1,17 @@
+[
+  {
+    "name": "Tope Ojewale",
+    "email": "topetest@gmail.com",
+    "age": 32
+  },
+  {
+    "name": "John Doe",
+    "email": "johndoe@gmail.com",
+    "age": 37
+  },
+  {
+    "name": "Jane Doe",
+    "email": "janedoe@gmail.com",
+    "age": 56
+  }
+]

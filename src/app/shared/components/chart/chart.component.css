@@ -1,6 +1,6 @@
 .card-detail {
   /*width: 345px;*/
-  height: 410px;
+  height: 492px;
   background: #ffffff;
   border-radius: 10px;
   /*padding: 30px 22px;*/
@@ -38,6 +38,8 @@
   border-radius: 50%;
   border: 10px solid #E2EDF8;
   border-left-color: #1B5BAC;
+  margin-top: 50px;
+
 }
 
 .card-detail.red .chart {
@@ -94,5 +96,30 @@ ul {
   margin-bottom: 10px;
 }
 
+.tooltip {
+  position: relative;
+  display: inline-block;
+  /*border-bottom: 1px dotted black;*/
+}
 
+.tooltip .tooltiptext {
+  /*visibility: hidden;*/
+  width: 50px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
 
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
+
+.tooltiptext {
+  left: 100px;
+}
+
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}

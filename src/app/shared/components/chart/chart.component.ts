@@ -9,7 +9,8 @@ export class ChartComponent implements OnInit {
   @Input() title: string;
   @Input() data: any;
   @Input() backgroundColor: string;
-  @Input() cardTitle: string
+  @Input() cardTitle: string;
+  @Input() percentage: number;
   constructor() { }
 
   ngOnInit(): void {

@@ -17,12 +17,12 @@
 .notification {
   width: 300px;
   height: 71px;
-  background: #fef6e7;
+  background: #fff;
   box-shadow: 0px 10px 20px rgba(184, 193, 209, 0.1);
   border-radius: 10px;
   margin-right: 16px;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   text-align: center;
   align-items: center;
 }
@@ -35,6 +35,26 @@
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+.user-details {
+  position: relative;
+  left: -35px;
+  line-height: 17px;
+  padding: 10px;
+  top: 0;
+}
+.user-name {
+  font-weight: 600;
+  font-size: 15px;
+}
+.user-name-details {
+  font-size: 10px;
+  text-transform: capitalize;
+}
+.notif-content {
+  line-height: 15px;
+  position: relative;
+  left: -38px;
 }
 .notif_no {
   width: 44px;
@@ -50,13 +70,14 @@
 .p_notif {
   font-weight: bold;
   font-size: 12px;
+  display: flex;
 }
 .p_text {
   font-size: 12px;
 }
 .log-out-wrapper {
-  width: 44px;
-  height: 44px;
+  width: 50px;
+  height: 50px;
   background: #133F77;
   border-radius: 10px;
   color: #fff;
@@ -64,4 +85,5 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 }

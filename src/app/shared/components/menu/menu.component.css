@@ -39,6 +39,7 @@ width: 288px;
 }
 .list-item {
   padding: 10px;
+  display: flex;
 }
 .menu-text {
   margin-left: 20px;
