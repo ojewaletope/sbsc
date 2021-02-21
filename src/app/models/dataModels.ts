@@ -1,7 +1,9 @@
 
 export interface UserInterface {
-  username: string;
+  id: string;
+  name: string;
   password: string;
   email: string;
-  age: number;
+  avatar: string;
+  verification_status: boolean;
 }
